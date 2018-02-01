@@ -12,4 +12,4 @@
 %% API
 -export([init/1]).
 
-init(name) -> name.
+init(Name) -> Name.
