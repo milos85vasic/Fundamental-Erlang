@@ -17,7 +17,7 @@ start(Port) -> spawn(server, execute, Port).
 execute(Port) ->
   %% Wait for command
   receive {Client, Command} ->
-    %% Handle received data
+    %% Handle received data by returning echo
     Client ! {self(), Command}
   end,
   %% Execute itself again to wait for next command
