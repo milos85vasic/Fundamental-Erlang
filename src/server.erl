@@ -20,5 +20,5 @@ execute(Port) ->
     %% Handle received data
     Client ! {self(), Command}
   end,
-  %% Execute itself again
+  %% Execute itself again to wait for next command
   execute(Port).
