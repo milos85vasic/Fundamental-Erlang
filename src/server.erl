@@ -15,7 +15,10 @@
 start(Port) -> spawn(server, execute, Port).
 
 execute(Port) ->
+  %% Wait for command
   receive {Client, Command} ->
+    %% Handle received data
     Client ! {self(), Command}
   end,
+  %% Execute itself again
   execute(Port).
